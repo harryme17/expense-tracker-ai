@@ -1,38 +1,230 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.App-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff5722;
+}
+
+/* Card & Section Styling */
+.card, .expense-form, .expense-list, .budget-setter, .ai-assistant, .receipt-generator, .email-sender {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover, .expense-form:hover, .expense-list:hover, .budget-setter:hover, .ai-assistant:hover, .receipt-generator:hover, .email-sender:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+h2, h3 {
+  margin-top: 0;
+  color: #34495e;
+}
+
+/* Layouts */
+.main-content, .interactive-section, .tools-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Dashboard & Summary */
+.dashboard h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #ff5722;
+}
+
+.summary-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.summary-cards .card {
+  flex: 1;
+  min-width: 150px;
+}
+
+.summary-cards h4 {
+  margin: 0 0 0.5rem 0;
+  color: #7f8c8d;
+}
+
+.summary-cards p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Forms & Inputs */
+input[type="text"], input[type="number"], input[type="date"], input[type="email"], select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #ff5722;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #e64a19;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Expense List */
+.expense-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.expense-list li {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.expense-list li:last-child {
+  border-bottom: none;
+}
+
+.expense-list li span {
+  font-size: 0.95rem;
+}
+
+.expense-list li .notes {
+  font-style: italic;
+  color: #7f8c8d;
+}
+
+.expense-list button {
+  margin-left: 0.5rem;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+/* AI Assistant */
+.suggestions-box {
+  background-color: #e8f4fd;
+  border-left: 4px solid #3498db;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+.suggestions-box pre {
+  white-space: pre-wrap; /* Allows text to wrap */
+  word-wrap: break-word;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.error-message {
+  color: #e74c3c;
+}
+
+/* Tools Section */
+.date-range-picker {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Generate PDF and Email Summary Sections */
+.receipt-generator, .email-sender {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  padding: 1.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.receipt-generator button, .email-sender button {
+  margin-top: 1rem;
+  width: 100%; /* Full-width buttons for smaller screens */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.receipt-generator h3, .email-sender h3 {
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content, .interactive-section, .tools-section {
+    grid-template-columns: 1fr; /* Single column layout for smaller screens */
   }
-  to {
-    transform: rotate(360deg);
+
+  .summary-cards {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 1rem;
+  }
+
+  .expense-list li {
+    grid-template-columns: 1fr; /* Stack expense details vertically */
+    text-align: left;
+  }
+
+  button {
+    width: 100%; /* Full-width buttons for smaller screens */
+  }
+
+  .receipt-generator, .email-sender {
+    width: 100%; /* Ensure sections take full width on smaller screens */
   }
 }

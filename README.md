@@ -28,7 +28,7 @@ This project is a React-based Expense Tracker application enhanced with an AI As
    ```sh
    git clone https://github.com/your-username/expense-tracker-ai.git
    cd expense-tracker-ai
-2.  nstall dependencies:
+2. Install dependencies:
     
     npm  install
     

@@ -1,70 +1,93 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Expense Tracker with AI Assistant
 
-## Available Scripts
+This project is a React-based Expense Tracker application enhanced with an AI Assistant that provides personalized cost-saving tips. It allows users to manage their expenses, set budgets, generate PDF receipts, and email summaries.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Expense Management**: Add, edit, and delete expenses with categories, amounts, and notes.
+- **Budget Tracking**: Set and track monthly budgets.
+- **Dashboard**: Visualize spending with charts (Pie Chart for categories and Bar Chart for weekly spending).
+- **AI Assistant**: Get actionable cost-saving tips based on your expenses and budget.
+- **Receipt Generator**: Generate PDF summaries of expenses for a selected date range.
+- **Email Summary**: Email expense summaries directly to a predefined recipient.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React**: Frontend framework for building the UI.
+- **Recharts**: Library for creating charts and graphs.
+- **html2pdf.js**: Library for generating PDF receipts.
+- **emailjs-com**: Library for sending email summaries.
+- **date-fns**: Utility library for date manipulation.
+- **React Hook Form**: Library for managing forms and validation.
+- **FontAwesome**: Icons for buttons and UI elements.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/expense-tracker-ai.git
+   cd expense-tracker-ai
+2.  nstall dependencies:
+    
+    npm  install
+    
+3.  Create a  `.env`  file in the root directory and add your API key:
+    
+    REACT_APP_GEMINI_API_KEY=your-api-key
+    
+    GENERATE_SOURCEMAP=false
+    
+4.  Start the development server:
+    
+    npm  start
+    
+    The app will be available at  http://localhost:3000.
+    
 
-### `npm run build`
+## Scripts
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   npm start: Runs the app in development mode.
+-   npm test: Launches the test runner.
+-   `npm run build`: Builds the app for production.
+-   `npm run eject`: Ejects the configuration files for customization.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Folder Structure
+```
+src/
+├── components/
+│   ├── AIAssistant.js
+│   ├── Budget.js
+│   ├── Dashboard.js
+│   ├── EmailSender.js
+│   ├── ExpenseForm.js
+│   ├── ExpenseList.js
+│   ├── ReceiptGenerator.js
+├── App.js
+├── App.css
+├── index.js
+├── index.css
+├── reportWebVitals.js
+├── setupTests.js
+public/
+├── index.html
+├── manifest.json
+├── robots.txt
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Environment Variables
 
-### `npm run eject`
+-   REACT_APP_GEMINI_API_KEY: API key for the AI Assistant.
+-   `GENERATE_SOURCEMAP`: Set to  `false`  to disable source maps in production.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## License
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Acknowledgments
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   Create React App
+-   Recharts
+-   html2pdf.js
+-   emailjs-com
+-   FontAwesome
